@@ -5,7 +5,7 @@ import { ERC721 } from "@openzeppelin/contracts/token/ERC721/ERC721.sol";
 import { ERC721Enumerable } from "@openzeppelin/contracts/token/ERC721/extensions/ERC721Enumerable.sol";
 import { Ownable } from "@openzeppelin/contracts/access/Ownable.sol";
 
-contract MyNft is ERC721, ERC721Enumerable, Ownable {
+contract Nftizer is ERC721, ERC721Enumerable, Ownable {
     uint256 private _nextTokenId;
 
     struct TokenMetadata {
@@ -19,7 +19,7 @@ contract MyNft is ERC721, ERC721Enumerable, Ownable {
 
     event TokenMinted(uint256 tokenId, address to, string name, string description, string imageUrl);
 
-    constructor(address initialOwner) ERC721("MyNft", "MNFT") Ownable(initialOwner){}
+    constructor(address initialOwner) ERC721("Nftizer", "Nftz") Ownable(initialOwner){}
 
     function safeMint(address to, string memory _name, string memory _description, string memory _imageUrl) public onlyOwner {
         uint256 tokenId = _nextTokenId++;
@@ -46,12 +46,12 @@ contract MyNft is ERC721, ERC721Enumerable, Ownable {
         return super._update(to, tokenId, auth);
     }
 
-    function _increaseBalance((address account),uint128 value) internal override(ERC721, ERC721Enumerable) {
+    function _increaseBalance(address account,uint128 value) internal override(ERC721, ERC721Enumerable) {
         super._increaseBalance(account, value);
 
     }
 
     function supportsInterface(bytes4 interfaceId) public view override(ERC721, ERC721Enumerable) returns(bool) {
-        returns super.supportsInterface(interfaceId);
+        return super.supportsInterface(interfaceId);
     }
 }
