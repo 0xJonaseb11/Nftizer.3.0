@@ -1,3 +1,21 @@
+# Nftizer.3.0
+
+Nft generator dApp built with scaffold-eth2 tool
+
+--------------------------
+@0xJonaseb11
+--------------------------
+
+
+
+
+
+
+
+
+
+
+
 # 🏗 Scaffold-ETH 2
 
 <h4 align="center">
@@ -78,3 +96,4 @@ To know more about its features, check out our [website](https://scaffoldeth.io)
 We welcome contributions to Scaffold-ETH 2!
 
 Please see [CONTRIBUTING.MD](https://github.com/scaffold-eth/scaffold-eth-2/blob/main/CONTRIBUTING.md) for more information and guidelines for contributing to Scaffold-ETH 2.
+
