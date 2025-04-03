@@ -35,7 +35,7 @@ const deployNftizer: DeployFunction = async function (hre: HardhatRuntimeEnviron
 
   // Get the deployed contract to interact with it after deploying.
   const nftizer = await hre.ethers.getContract<Contract>("Nftizer", deployer);
-  console.log("Nftizer contract deployed at: ", nftizer.address);
+  console.log("Nftizer contract deployed at: ", nftizer.target);
 };
 
 export default deployNftizer;
