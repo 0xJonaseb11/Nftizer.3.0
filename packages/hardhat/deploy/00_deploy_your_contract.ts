@@ -25,7 +25,8 @@ const deployNftizer: DeployFunction = async function (hre: HardhatRuntimeEnviron
   await deploy("Nftizer", {
     from: deployer,
     // Contract constructor arguments
-    args: [deployer],
+    // args: [deployer],
+    args: ["0xC816c4735516BecDAA00b8a22713c93f7BC5196C"],
     log: true,
     // autoMine: can be passed to the deploy function to make the deployment process faster on local networks by
     // automatically mining the contract deployment transaction. There is no effect on live networks.
@@ -33,8 +34,8 @@ const deployNftizer: DeployFunction = async function (hre: HardhatRuntimeEnviron
   });
 
   // Get the deployed contract to interact with it after deploying.
-  const yourContract = await hre.ethers.getContract<Contract>("Nftizer", deployer);
-  console.log("👋 Initial greeting:", await yourContract.greeting());
+  const nftizer = await hre.ethers.getContract<Contract>("Nftizer", deployer);
+  console.log("Nftizer contract deployed at: ", nftizer.address);
 };
 
 export default deployNftizer;
